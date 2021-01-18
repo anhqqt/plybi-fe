@@ -34,7 +34,7 @@ services:
       - nginx
     stdin_open: true
     tty: true
-    command: certonly --webroot --webroot-path=/home/plybi/challenge --email sheid1309@gmail.com --agree-tos --no-eff-email --staging -d plybi.com
+    command: certonly --webroot --webroot-path=/home/plybi/challenge --email sheid1309@gmail.com --agree-tos --no-eff-email --staging -d plybi.pierrecardinvn.com
     networks:
       - plybi-network
 
