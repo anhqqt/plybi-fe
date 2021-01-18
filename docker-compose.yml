@@ -20,8 +20,8 @@ services:
         source: certbot-var
         target: /var/lib/letsencrypt
       - type: volume
-        source: web-root
-        target: /home/plybi
+        source: acme_challenge
+        target: /home/plybi/.well-known/acme-challenge
 
   certbot:
     image: certbot/certbot
@@ -29,28 +29,22 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - web-root:/home/plybi
-
+      - acme_challenge:/home/plybi/challenge/.well-known/acme-challenge
     depends_on:
       - nginx
     stdin_open: true
     tty: true
-    command: certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email --preferred-challenges http --staging -d plybi.pierrecardinvn.com www.plybi.pierrecardinvn.com
+    command: certonly --webroot --webroot-path=/home/plybi/challenge --email sheid1309@gmail.com --agree-tos --no-eff-email --staging -d plybi.com
     networks:
       - plybi-network
 
 volumes:
+  acme_challenge:
+    name: "acme_challenge"
   certbot-etc:
     name: "certbot-etc"
   certbot-var:
     name: "certbot-var"
-  web-root:
-    name: "web-root"
-    # driver: local
-    # driver_opts:
-    #   type: none
-    #   device: nginx/build
-    #   o: bind
 
 networks:
   plybi-network:
