@@ -14,14 +14,14 @@ services:
       - "443:443"
     volumes:
       - type: volume
+        source: web-root
+        target: /home/plybi
+      - type: volume
         source: certbot-etc
         target: /etc/letsencrypt
       - type: volume
         source: certbot-var
         target: /var/lib/letsencrypt
-      - type: volume
-        source: acme_challenge
-        target: /home/plybi/.well-known/acme-challenge
 
   certbot:
     image: certbot/certbot
@@ -29,18 +29,14 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - acme_challenge:/home/plybi/challenge/.well-known/acme-challenge
+      - web-root:/home/plybi
     depends_on:
       - nginx
-    stdin_open: true
-    tty: true
-    command: certonly --webroot --webroot-path=/home/plybi/challenge --email sheid1309@gmail.com --agree-tos --no-eff-email --staging -d plybi.pierrecardinvn.com
-    networks:
-      - plybi-network
+    command: certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email --staging -d plybi.pierrecardinvn.com
 
 volumes:
-  acme_challenge:
-    name: "acme_challenge"
+  web-root:
+    name: "web-root"
   certbot-etc:
     name: "certbot-etc"
   certbot-var:
