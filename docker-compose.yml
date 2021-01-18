@@ -1,0 +1,57 @@
+version: "3.7"
+
+services:
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    container_name: "nginx"
+    restart: unless-stopped
+    networks:
+      - plybi-network
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: volume
+        source: certbot-etc
+        target: /etc/letsencrypt
+      - type: volume
+        source: certbot-var
+        target: /var/lib/letsencrypt
+      - type: volume
+        source: web-root
+        target: /home/plybi
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/home/plybi
+
+    depends_on:
+      - nginx
+    stdin_open: true
+    tty: true
+    command: certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email --preferred-challenges http --staging -d plybi.pierrecardinvn.com
+    networks:
+      - plybi-network
+
+volumes:
+  certbot-etc:
+    name: "certbot-etc"
+  certbot-var:
+    name: "certbot-var"
+  web-root:
+    name: "web-root"
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: nginx/build
+    #   o: bind
+
+networks:
+  plybi-network:
+    name: "plybi-network"
