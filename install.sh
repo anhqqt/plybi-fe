@@ -46,9 +46,9 @@ do
         "${options[1]}")
             clear; step_2;;
         "${options[2]}")
-            clear; step_2;;
+            clear; step_3;;
         "${options[3]}")
-            clear; step_2;;
+            clear; step_4;;
         *) echo "Invalid input. Please try again with valid number from 1-${#options[@]}[Ctrl+C to exit]: "; continue;;
     esac
 done
