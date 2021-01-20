@@ -23,16 +23,16 @@ services:
         source: certbot-var
         target: /var/lib/letsencrypt
 
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/home/plybi
-    depends_on:
-      - nginx
-    command: certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email --staging -d plybi.pierrecardinvn.com
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - certbot-etc:/etc/letsencrypt
+  #     - certbot-var:/var/lib/letsencrypt
+  #     - web-root:/home/plybi
+  #   depends_on:
+  #     - nginx
+  #   command: certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email plybi.pierrecardinvn.com
 
 volumes:
   web-root:

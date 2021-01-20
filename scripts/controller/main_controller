@@ -1,0 +1,30 @@
+#!/bin/bash
+# Step 1 function
+step_1() {
+    wget https://raw.githubusercontent.com/sheid1309/DevOps-Scripts/master/docker.sh
+    chmod u+x docker.sh
+    . docker.sh
+    rm -rf docker.sh
+    . install.sh
+}
+
+# Step 2 function
+step_2(){
+    docker-compose up -d --build
+}
+
+# Step 3 function
+step_3(){
+    docker run -it --name certbot \
+    -v certbot-etc:/etc/letsencrypt \
+    -v certbot-var:/var/lib/letsencrypt \
+    -v web-root:/home/plybi \
+    certbot/certbot \
+    certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email plybi.pierrecardinvn.com
+}
+
+# Step 4 function
+step_4(){
+    docker cp nginx/my-default-https.conf nginx:/etc/nginx/conf.d/default.conf
+    docker-compose restart
+}
