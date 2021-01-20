@@ -44,6 +44,8 @@ First, please help by clonning this project to your machine
 git clone https://github.com/sheid1309/plybi-fe.git
 ```
 
+After that, please point your domain to the IP address of your VM. Suppose your domain will be **plybi.com**
+
 ### Installing
 After that, please follow below steps to run the project
 
