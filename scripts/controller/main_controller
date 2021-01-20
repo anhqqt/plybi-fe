@@ -21,7 +21,7 @@ step_3(){
     -v certbot-var:/var/lib/letsencrypt \
     -v web-root:/home/plybi \
     certbot/certbot \
-    certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email plybi.pierrecardinvn.com
+    certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email -d plybi.pierrecardinvn.com
     . install.sh
 }
 
