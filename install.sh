@@ -26,6 +26,7 @@ echo "- Step 1: Install Docker to your machine"
 echo "- Step 2: Run Nginx container on port 80 with your code inside"
 echo "- Step 3: Run Certbot to generate SSL Certificates to your Nginx container"
 echo "- Step 4: Re-configure Nginx container with new SSL"
+echo "- Step 5: Auto Renew SSL"
 echo "-------------------------------------------------------------------------"
 echo
 options=(

@@ -16,6 +16,7 @@ step_2(){
 
 # Step 3 function
 step_3(){
+    docker rm -rf certbot
     docker run -it --name certbot \
     -v certbot-etc:/etc/letsencrypt \
     -v certbot-var:/var/lib/letsencrypt \
