@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://i.imgur.com/VBInytZ.jpg" alt="PLYBI logo"></a>
 </p>
 
-<h3 align="center">Plybi Website/h3>
+<h3 align="center">Plybi Website</h3>
 
 <div align="center">
 
@@ -97,7 +97,6 @@ After that you will see a menu appear. Please follow from Step 1 to Step 4 in th
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@sheid1309](https://github.com/sheid1309) - Idea & Initial work
-
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
