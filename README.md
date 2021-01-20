@@ -3,15 +3,17 @@
  <img width=200px height=200px src="https://i.imgur.com/VBInytZ.jpg" alt="PLYBI logo"></a>
 </p>
 
-<h3 align="center">Plybi Website</h3>
+<h3 align="center">Plybi Website/h3>
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/sheid1309/plybi-fe/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/sheid1309/plybi-fe/pulls)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
+[![Status](https://img.shields.io/website?url=https%3A%2F%2Fplybi.pierrecardinvn.com)](https://img.shields.io/website?url=https%3A%2F%2Fplybi.pierrecardinvn.com) 
+[![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+[![GitHub Issues](https://img.shields.io/github/issues/sheid1309/plybi-fe)](https://github.com/sheid1309/plybi-fe/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/sheid1309/plybi-fe)](https://github.com/sheid1309/plybi-fe/pulls)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/sheid1309/plybi-fe)](https://github.com/sheid1309/plybi-fe/commits)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/sheid1309/plybi-fe)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 </div>
 
 ---
