@@ -28,7 +28,7 @@ step_2(){
 # }
 step_3(){
     docker rm -f certbot
-    docker run -it --name certbot -v certbot-etc:/etc/letsencrypt -v certbot-var:/var/lib/letsencrypt -v web-root:/home/plybi certbot/certbot certonly --webroot --webroot-path=/home/plybi --agree-tos --no-eff-email -d plybi.com -d www.plybi.com
+    docker run -it --name certbot -v certbot-etc:/etc/letsencrypt -v certbot-var:/var/lib/letsencrypt -v web-root:/home/plybi certbot/certbot certonly --webroot --webroot-path=/home/plybi --agree-tos --no-eff-email -d plybi.pierrecardinvn.com
     . install.sh
 }
 
