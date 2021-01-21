@@ -10,6 +10,7 @@ step_1() {
 
 # Step 2 function
 step_2(){
+    export ENV=http
     docker-compose up -d --build
     . install.sh
 }
@@ -30,5 +31,13 @@ step_3(){
 step_4(){
     docker cp nginx/my-default-https.conf nginx:/etc/nginx/conf.d/default.conf
     docker-compose restart
+    . install.sh
+}
+
+# Step 5 function
+step_5(){
+    export ENV=https
+    docker-compose down
+    docker-compose up -d --build
     . install.sh
 }
