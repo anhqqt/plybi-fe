@@ -12,6 +12,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    command: /bin/sh -c "while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g 'daemon off;'"
     volumes:
       - type: volume
         source: web-root
@@ -39,7 +40,7 @@ services:
     restart: unless-stopped
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/home/plybi --email sheid1309@gmail.com --agree-tos --no-eff-email --staging --force-renewal --non-interactive -d plybi.pierrecardinvn.com
+    command: certonly --webroot --webroot-path=/home/plybi --email phuoc.nguyen@plybi.com --agree-tos --no-eff-email --staging --force-renewal --non-interactive -d plybi.com -d www.plybi.com
 
 volumes:
   web-root:
