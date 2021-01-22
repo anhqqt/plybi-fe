@@ -10,7 +10,7 @@ step_1() {
 
 # Step 2 function
 step_2(){
-    # export SSL_TYPE=http
+    export SSL_TYPE=http
     # docker-compose build --build-arg SSL_TYPE=http
     docker-compose up -d --build
     . install.sh
@@ -42,7 +42,7 @@ step_4(){
 
 # Step 5 function
 step_5(){
-    # export SSL_TYPE=https
+    export SSL_TYPE=https
     docker-compose down
     # docker-compose build --build-arg SSL_TYPE=https
     docker-compose up -d

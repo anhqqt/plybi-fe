@@ -12,7 +12,7 @@ RUN apt-get install net-tools -y
 WORKDIR /home/plybi
 
 # COPY config for nginx to container
-ADD my-default-${SSL_TYPE}.conf /etc/nginx/conf.d/default.conf
+# ADD my-default-${SSL_TYPE}.conf /etc/nginx/conf.d/default.conf
 # ADD my-nginx.conf /etc/nginx/nginx.conf
 
 # ADD source to image

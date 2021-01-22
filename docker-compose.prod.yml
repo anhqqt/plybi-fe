@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  nginx:
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: volume
+        source: web-root
+        target: /home/plybi
+      - type: volume
+        source: certbot-etc
+        target: /etc/letsencrypt
+      - type: volume
+        source: certbot-var
+        target: /var/lib/letsencrypt
+      - type: bind
+        source: ./my-default-http.conf
+        target: /etc/nginx/conf.d/default.conf
+      - type: bind
+        source: ./my-default-https.conf
+        target: /etc/nginx/sites-enabled/plybi.pierrecardinvn.com.conf
+
+volumes:
+  web-root:
+    name: "web-root"
+  certbot-etc:
+    name: "certbot-etc"
+  certbot-var:
+    name: "certbot-var"
