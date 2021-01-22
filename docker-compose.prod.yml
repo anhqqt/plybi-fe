@@ -22,6 +22,9 @@ services:
         source: ./nginx/my-default-https.conf
         target: /etc/nginx/sites-enabled/plybi.pierrecardinvn.com.conf
 
+  certbot:
+    entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;"
+            
 volumes:
   web-root:
     name: "web-root"
