@@ -23,7 +23,7 @@ services:
         target: /etc/nginx/sites-enabled/plybi.com.conf
 
   certbot:
-    entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;"
+    entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew; sleep 24h & wait $${!}; done;"
     command: certbot --version
 
 volumes:
